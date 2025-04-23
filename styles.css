@@ -1,0 +1,918 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f5f7fa;
+}
+
+.header {
+  background-color: white;
+  padding: 15px 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  width: 50px;
+  margin-right: 20px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0 15px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: #0066cc;
+}
+
+.hero {
+  background-color: #0b5394;
+  color: white;
+  padding: 80px 20px; /* Increased padding for more space */
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+  min-height: 500px; /* Added minimum height */
+}
+
+.hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hero-text {
+  max-width: 55%; /* Slightly increased from 50% */
+}
+
+.hero h1 {
+  font-size: 50px; /* Increased from 36px */
+  font-weight: 900;
+  margin-bottom: 20px; /* Increased from 20px */
+  line-height: 1.2; /* Added for better readability with larger text */
+}
+
+.hero p {
+  font-size: 40px; /* Increased from 22px */
+  margin-bottom: 40px; /* Increased from 30px */
+  color: #ffde59;
+}
+
+.register-btn {
+  background-color: #4d0099;
+  color: white;
+  padding: 20px 60px; /* Increased from 10px 25px */
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px; /* Increased from 14px */
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.hero-image {
+  position: absolute;
+  right: 25px;
+  top: 40px;
+  width: 50%; /* Increased from 40% */
+  height: auto;
+  max-height: 450px; /* Added to control image height */
+}
+
+.section {
+  padding: 50px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  color: #0b5394;
+  font-size: 24px;
+  margin-bottom: 30px;
+  font-weight: bold;
+}
+
+
+.about-why-container {
+  background-color: #dde7f5;
+    padding: 0 20px 50px;
+    margin: 0;
+    max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.about-why-content {
+  width: 80%;
+}
+
+.side-image-container {
+  width: 35%;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px 0;
+}
+
+.side-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+/* Modify these sections to work in the new layout */
+.about-why-content .section {
+  padding: 30px 0;
+  width: 100%;
+}
+
+.about-text {
+  width: 100%;
+}
+
+.benefits-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.benefits-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+/* For responsiveness */
+@media (max-width: 768px) {
+  .about-why-container {
+      flex-direction: column;
+  }
+  
+  .about-why-content,
+  .side-image-container {
+      width: 100%;
+  }
+  
+  .side-image-container {
+      position: static;
+      margin: 20px 0;
+  }
+}
+
+#eligibility {
+  background-color: #cde6fb;
+  max-width: 100%;
+  padding: 50px 20px;
+}
+
+#eligibility .section-title,
+#eligibility .category-box {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1200px;
+}
+
+.category-boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  gap: 20px; /* Added gap for better spacing between boxes */
+}
+
+.category-box {
+  width: 220px; /* Fixed width instead of percentage */
+  height: 200px; /* Same as width to make it square */
+  background-color: #0b5394;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
+  align-items: center; /* Center content horizontally */
+}
+
+.category-title {
+  background-color: #ffcc00;
+  padding: 8px 12px; /* Increased padding */
+  color: #0b5394;
+  font-weight: bold;
+  margin-bottom: 20px; /* Increased spacing */
+  border-radius: 3px;
+  font-size: 20px; /* Increased font size */
+  width: 90%; /* Set width to create better proportion */
+}
+
+.category-box p {
+  font-size: 20px; /* Increased font size */
+  line-height: 1.5;
+  margin-top: 10px;
+}
+
+/* Add responsive styling for smaller screens */
+@media (max-width: 992px) {
+  .category-boxes {
+      flex-wrap: wrap;
+      justify-content: center;
+  }
+  
+  .category-box {
+      margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .category-box {
+      width: 180px;
+      height: 180px;
+  }
+}
+
+@media (max-width: 576px) {
+  .category-boxes {
+      flex-direction: column;
+      align-items: center;
+  }
+  
+  .category-box {
+      width: 220px;
+      height: 220px;
+      margin-bottom: 20px;
+  }
+}
+
+.structure-content {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 30px;
+}
+
+.structure-item {
+  text-align: center;
+  width: 40%;
+}
+
+.structure-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+}
+
+#syllabus {
+  background-color: #e7f0f8;
+  max-width: 100%;
+}
+
+#syllabus .section-title,
+#syllabus .topics-container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Updated CSS for the Topics Section */
+.topics-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1000px;
+}
+
+.image-container {
+  width: 40%; /* Increased from 30% */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.topics-image {
+  max-width: 100%;
+  height: auto;
+  min-width: 220px; /* Added minimum width */
+}
+
+.topics-list {
+  list-style-type: disc;
+  padding-left: 80px;
+  width: 60%; /* Adjusted from 65% */
+}
+
+.topics-list li {
+  margin-bottom: 20px; /* Increased from 15px */
+  font-size: 18px; /* Increased from 16px */
+  font-weight: 500; /* Added slightly bolder font */
+  line-height: 1.2; /* Added for better readability */
+}
+
+/* Maintain the two-column layout for the topics list */
+.topics-list {
+  columns: 1;
+  column-gap: 50px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .topics-container {
+      flex-direction: column;
+  }
+  
+  .image-container {
+      width: 100%;
+      margin-bottom: 30px;
+  }
+  
+  .topics-image {
+      max-width: 200px; /* Increased from 150px */
+  }
+  
+  .topics-list {
+      width: 100%;
+      columns: 1;
+  }
+}
+
+/* Added for larger screens to make everything bigger */
+@media (min-width: 992px) {
+  .topics-list li {
+      font-size: 20px; /* Even larger text on big screens */
+  }
+  
+  .image-container {
+      width: 45%; /* Slightly larger image area on big screens */
+  }
+}
+
+/* Updated CSS for the Awards Section */
+#awards {
+  background-color: #ffffff;
+  max-width: 100%;
+}
+
+.awards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.awards-list {
+  list-style-type: disc;
+  padding-left: 70px;
+  width: 80%;
+}
+
+.awards-list li {
+  margin-bottom: 20px;
+  font-size: 40px; /* Increased text size */
+  line-height: 1.4;
+  font-weight: 510;
+}
+
+.trophy-container {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trophy-image {
+  max-width: 50%;
+  height: auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .awards-container {
+      flex-direction: column;
+  }
+  
+  .awards-list {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+  
+  .trophy-container {
+      width: 100%;
+  }
+  
+  .trophy-image {
+      max-width: 300px;
+  }
+}
+
+.awards-list li {
+  margin-bottom: 10px;
+  margin-left: 40px;
+  font-size: 16px;
+}
+
+#dates {
+  background-color: #dbedfc;
+  max-width: 100%;
+}
+
+#dates .section-title,
+#dates .dates-content {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Updated CSS for Register Now buttons with hover effects */
+
+/* Common styles for both register buttons */
+.register-btn {
+  background-color: #4d0099;
+  color: white;
+  padding: 20px 60px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 20px;
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-block;
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Hover effect for register buttons */
+.register-btn:hover {
+  background-color: #6600cc; /* Lighter purple on hover */
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
+}
+
+/* Active (clicking) effect */
+.register-btn:active {
+  transform: translateY(-2px); /* Less lift when clicking */
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Reduced shadow when clicking */
+}
+
+/* Specific adjustments for the dates section button */
+#dates .register-btn {
+  margin-right: auto; /* This pushes it to the left */
+  margin-left: 200px; /* Adds some space from the left text */
+}
+
+/* Updated dates content layout */
+.dates-content {
+  display: flex;
+  justify-content: flex-start; 
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.dates-text {
+  font-size: 18px;
+  font-weight: bold;
+  width: 40%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dates-content {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  
+  .dates-text {
+      margin-bottom: 20px;
+      width: 100%;
+  }
+  
+  #dates .register-btn {
+      margin-left: 0;
+  }
+}
+/* .dates-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dates-text {
+  margin-left: 40px;
+  font-size: 20px;
+  font-weight: bold;
+} */
+
+.footer {
+  background-color: #f5f5f5;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact-left, .contact-right {
+  width: 45%;
+}
+
+.contact-item {
+  margin-bottom: 10px;
+}
+
+.footer-logo {
+  width: 150px;
+  margin-top: 20px;
+}
+
+.footer-nav {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-nav a {
+  margin: 0 10px;
+  color: #333;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+.kids-image {
+  display: block;
+  margin: 0 auto;
+  max-width: 150px;
+}
+
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .nav-links {
+      display: none;
+  }
+  
+  .hero-text {
+      max-width: 100%;
+  }
+  
+  .hero-image {
+      display: none;
+  }
+  
+  .about-content {
+      flex-direction: column;
+  }
+  
+  .about-text, .about-image {
+      max-width: 100%;
+      margin-bottom: 20px;
+  }
+  
+  .category-boxes {
+      flex-direction: column;
+  }
+  
+  .category-box {
+      width: 100%;
+      margin-bottom: 15px;
+  }
+  
+  .structure-content {
+      flex-direction: column;
+  }
+  
+  .structure-item {
+      width: 100%;
+      margin-bottom: 30px;
+  }
+  
+  .topics-list {
+      columns: 1;
+  }
+  
+  .contact-info {
+      flex-direction: column;
+  }
+  
+  .contact-left, .contact-right {
+      width: 100%;
+      margin-bottom: 20px;
+  }
+}
+
+/* Base styles remain the same - adding/updating responsive styles */
+
+/* Mobile navigation menu styles */
+.mobile-menu-button {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  padding: 10px;
+}
+
+/* Updated navbar styles for responsiveness */
+@media (max-width: 992px) {
+  .mobile-menu-button {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 101;
+  }
+  
+  .navbar {
+    padding: 0 20px;
+    justify-content: flex-start;
+  }
+  
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+  }
+  
+  .nav-links.active {
+    display: flex;
+  }
+  
+  .nav-links li {
+    margin: 15px 0;
+  }
+  
+  .nav-links a {
+    font-size: 18px;
+  }
+}
+
+/* Hero section responsive updates */
+@media (max-width: 992px) {
+  .hero {
+    padding: 50px 20px;
+    text-align: center;
+    min-height: auto;
+  }
+  
+  .hero-content {
+    flex-direction: column;
+  }
+  
+  .hero-text {
+    max-width: 100%;
+  }
+  
+  .hero h1 {
+    font-size: 36px;
+  }
+  
+  .hero p {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .register-btn {
+    padding: 12px 30px;
+    font-size: 16px;
+  }
+  
+  .hero-image {
+    position: relative;
+    width: 80%;
+    max-width: 300px;
+    margin: 30px auto 0;
+    top: auto;
+    right: auto;
+    display: block;
+  }
+}
+
+/* About/Why sections responsive updates */
+@media (max-width: 992px) {
+  .about-why-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .about-why-content {
+    width: 100%;
+    order: 2;
+  }
+  
+  .side-image-container {
+    width: 100%;
+    position: static;
+    order: 1;
+    margin-bottom: 20px;
+  }
+  
+  .side-image {
+    max-width: 250px;
+  }
+}
+
+/* Structure section responsive updates */
+@media (max-width: 768px) {
+  .structure-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .structure-item {
+    width: 90%;
+    margin-bottom: 30px;
+  }
+  
+  .structure-icon {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+/* Eligibility section improved responsiveness */
+@media (max-width: 992px) {
+  .category-boxes {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .category-box {
+    width: calc(50% - 20px);
+    max-width: 200px;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 576px) {
+  .category-box {
+    width: 80%;
+    max-width: 220px;
+    margin-bottom: 15px;
+  }
+  
+  .category-title {
+    font-size: 18px;
+  }
+  
+  .category-box p {
+    font-size: 16px;
+  }
+}
+
+/* Topics section responsive updates */
+@media (max-width: 768px) {
+  .topics-container {
+    flex-direction: column;
+  }
+  
+  .image-container {
+    width: 100%;
+    max-width: 200px;
+    margin: 0 auto 20px;
+    padding-right: 0;
+  }
+  
+  .topics-list {
+    width: 100%;
+    padding-left: 30px;
+  }
+  
+  .topics-list li {
+    font-size: 16px;
+    margin-bottom: 12px;
+  }
+}
+
+/* Awards section responsive updates */
+@media (max-width: 768px) {
+  .awards-container {
+    flex-direction: column;
+  }
+  
+  .awards-list {
+    width: 100%;
+    padding-left: 30px;
+    order: 2;
+  }
+  
+  .awards-list li {
+    font-size: 16px;
+    margin-left: 20px;
+    margin-bottom: 12px;
+  }
+  
+  .trophy-container {
+    width: 100%;
+    order: 1;
+    margin-bottom: 20px;
+  }
+  
+  .trophy-image {
+    max-width: 150px;
+  }
+}
+
+/* Dates section responsive updates */
+@media (max-width: 768px) {
+  .dates-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .dates-text {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: 0;
+  }
+  
+  #dates .register-btn {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .dates-text {
+    font-size: 16px;
+  }
+  
+  .register-btn {
+    padding: 12px 25px;
+    font-size: 16px;
+  }
+}
+
+/* Footer responsive updates */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+  }
+  
+  .contact-left, .contact-right {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+  }
+  
+  .footer-nav {
+    flex-wrap: wrap;
+  }
+  
+  .footer-nav a {
+    margin: 5px;
+  }
+  
+  .footer-logo {
+    width: 100px;
+  }
+}
