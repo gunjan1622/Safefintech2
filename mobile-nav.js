@@ -1,80 +1,68 @@
-// JavaScript to handle mobile navigation menu
-document.addEventListener("DOMContentLoaded", function() {
-    // Create mobile menu button
-    const mobileMenuButton = document.createElement('button');
-    mobileMenuButton.className = 'mobile-menu-button';
-    mobileMenuButton.innerHTML = '☰';
-    mobileMenuButton.setAttribute('aria-label', 'Toggle navigation menu');
+// Mobile menu toggle functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const menuToggle = document.createElement('button');
+    menuToggle.className = 'menu-toggle';
+    menuToggle.innerHTML = '<span></span><span></span><span></span>';
     
-    // Get the navbar element
     const navbar = document.querySelector('.navbar');
-    
-    // Add the button to the navbar
-    navbar.appendChild(mobileMenuButton);
-    
-    // Get navigation links
     const navLinks = document.querySelector('.nav-links');
     
-    // Function to toggle menu
-    function toggleMenu() {
+    // Insert hamburger menu button into the navbar
+    navbar.insertBefore(menuToggle, navLinks);
+    
+    // Toggle menu visibility when clicking the hamburger button
+    menuToggle.addEventListener('click', function() {
         navLinks.classList.toggle('active');
-        
-        // Change button text based on menu state
-        if (navLinks.classList.contains('active')) {
-            mobileMenuButton.innerHTML = '✕';
-        } else {
-            mobileMenuButton.innerHTML = '☰';
-        }
-    }
+        menuToggle.classList.toggle('active');
+    });
     
-    // Add click event to toggle menu
-    mobileMenuButton.addEventListener('click', toggleMenu);
-    
-    // Close menu when links are clicked
+    // Close menu when clicking a nav link (for better mobile UX)
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', function() {
-            if (navLinks.classList.contains('active')) {
-                toggleMenu();
-            }
+            navLinks.classList.remove('active');
+            menuToggle.classList.remove('active');
         });
     });
     
-    // Close menu if clicked outside of navigation
-    document.addEventListener('click', function(event) {
-        const isNavButton = event.target.closest('.mobile-menu-button');
-        const isNavMenu = event.target.closest('.nav-links');
-        
-        if (!isNavButton && !isNavMenu && navLinks.classList.contains('active')) {
-            toggleMenu();
-        }
+    // Add scroll animations
+    const scrollElements = document.querySelectorAll('.about-section, .nationwide-impact, #advisory, #eligibility, #structure, #syllabus, #awards, #dates');
+    
+    const elementInView = (el, percentageScroll = 100) => {
+        const elementTop = el.getBoundingClientRect().top;
+        return (
+            elementTop <= 
+            ((window.innerHeight || document.documentElement.clientHeight) * (percentageScroll/100))
+        );
+    };
+    
+    const displayScrollElement = (element) => {
+        element.classList.add('active');
+    };
+    
+    const hideScrollElement = (element) => {
+        element.classList.remove('active');
+    };
+    
+    const handleScrollAnimation = () => {
+        scrollElements.forEach((el) => {
+            if (elementInView(el, 80)) {
+                displayScrollElement(el);
+            } else {
+                hideScrollElement(el);
+            }
+        });
+    };
+    
+    // Initialize elements with fade-in class
+    scrollElements.forEach(el => {
+        el.classList.add('fade-in');
     });
-
-    // Adjust for window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 992 && navLinks.classList.contains('active')) {
-            navLinks.classList.remove('active');
-            mobileMenuButton.innerHTML = '☰';
-        }
+    
+    // Add scroll event listener
+    window.addEventListener('scroll', () => {
+        handleScrollAnimation();
     });
-});
-
-// Keep existing smooth scrolling code
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        
-        if (targetElement) {
-            // Adjust offset for mobile screens
-            const offset = window.innerWidth <= 768 ? 60 : 80;
-            
-            window.scrollTo({
-                top: targetElement.offsetTop - offset,
-                behavior: 'smooth'
-            });
-        }
-    });
+    
+    // Trigger once on load
+    handleScrollAnimation();
 });
