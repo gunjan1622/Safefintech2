@@ -1,3 +1,4 @@
+/* Base styles and resets */
 * {
   margin: 0;
   padding: 0;
@@ -7,8 +8,10 @@
 
 body {
   background-color: #f5f7fa;
+  overflow-x: hidden;
 }
 
+/* Header & Navigation Styles */
 .header {
   background-color: white;
   padding: 15px 0;
@@ -18,17 +21,17 @@ body {
   z-index: 100;
 }
 
-.navbar {
+.nav-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 .logo {
   width: 50px;
-  margin-right: 20px;
 }
 
 .nav-links {
@@ -53,14 +56,21 @@ body {
   color: #0066cc;
 }
 
+.menu-toggle {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Hero Section */
 .hero {
   background-color: #0b5394;
   color: white;
-  padding: 80px 20px; /* Increased padding for more space */
+  padding: 80px 20px;
   text-align: left;
   position: relative;
   overflow: hidden;
-  min-height: 500px; /* Added minimum height */
+  min-height: 500px;
 }
 
 .hero-content {
@@ -72,62 +82,64 @@ body {
 }
 
 .hero-text {
-  max-width: 55%; /* Slightly increased from 50% */
+  max-width: 55%;
+  z-index: 5;
 }
 
 .hero h1 {
-  font-size: 50px; /* Increased from 36px */
+  font-size: 48px;
   font-weight: 900;
-  margin-bottom: 14px; /* Increased from 20px */
-  line-height: 1.2; /* Added for better readability with larger text */
+  margin-bottom: 14px;
+  line-height: 1.2;
 }
 
 .hero p {
-  font-size: 40px; /* Increased from 22px */
-  margin-bottom: 40px; /* Increased from 30px */
+  font-size: 36px;
+  margin-bottom: 40px;
   color: #ffde59;
 }
 
-.register-ind {
-  background-color: #4d0099;
-  color: white;
-  padding: 15px 30px; /* Increased from 10px 25px */
-  margin-right: 20px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 16px; /* Increased from 14px */
-  text-transform: uppercase;
-  transition: background-color 0.3s;
-  display: inline-block;
-  text-decoration: none;
+.hero-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 300px;
 }
 
-.register-sch {
+.register-ind, .register-sch {
   background-color: #4d0099;
   color: white;
-  padding: 15px 30px; /* Increased from 10px 25px */
+  padding: 15px 30px;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  font-size: 16px; /* Increased from 14px */
+  font-size: 16px;
   text-transform: uppercase;
-  transition: background-color 0.3s;
+  transition: all 0.3s;
   display: inline-block;
   text-decoration: none;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.register-ind:hover, .register-sch:hover {
+  background-color: #6600cc;
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
 .hero-image {
   position: absolute;
-  right: 25px;
-  top: 1px;
-  width: 50%; /* Increased from 40% */
-  height: 600px;
-  /* max-height: 450px; Added to control image height */
+  right: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
 }
 
+/* Common section styles */
 .section {
   padding: 50px 20px;
   max-width: 1200px;
@@ -142,526 +154,7 @@ body {
   font-weight: bold;
 }
 
-
-.about-why-container {
-  background-color: #dde7f5;
-    padding: 0 20px 50px;
-    margin: 0;
-    max-width: 100%;
-  display: flex;
-  justify-content: space-between;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.about-why-content {
-  width: 80%;
-}
-
-.side-image-container {
-  width: 35%;
-  position: sticky;
-  top: 100px;
-  height: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 20px 0;
-}
-
-.side-image {
-  width: 100%;
-  max-height: 500px;
-  object-fit: contain;
-}
-
-/* Modify these sections to work in the new layout */
-.about-why-content .section {
-  padding: 30px 0;
-  width: 100%;
-}
-
-.about-text {
-  width: 100%;
-  margin-left: 40px;
-}
-
-.benefits-list {
-  list-style-type: disc;
-  padding-left: 20px;
-  width: 100%;
-}
-
-.benefits-list li {
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-/* For responsiveness */
-@media (max-width: 768px) {
-  .about-why-container {
-      flex-direction: column;
-  }
-  
-  .about-why-content,
-  .side-image-container {
-      width: 100%;
-  }
-  
-  .side-image-container {
-      position: static;
-      margin: 20px 0;
-  }
-}
-
-
-#eligibility {
-  background-color: #dcefff;
-  max-width: 100%;
-  padding: 50px 20px;
-}
-
-#eligibility .section-title,
-#eligibility .category-box {
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 1200px;
-}
-
-.category-boxes {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 30px;
-  gap: 20px; /* Added gap for better spacing between boxes */
-}
-
-.category-box {
-  width: 220px; /* Fixed width instead of percentage */
-  height: 200px; /* Same as width to make it square */
-  background-color: #0b5394;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Center content vertically */
-  align-items: center; /* Center content horizontally */
-}
-
-.category-title {
-  background-color: #ffcc00;
-  padding: 8px 12px; /* Increased padding */
-  color: #0b5394;
-  font-weight: bold;
-  margin-bottom: 20px; /* Increased spacing */
-  border-radius: 3px;
-  font-size: 20px; /* Increased font size */
-  width: 90%; /* Set width to create better proportion */
-}
-
-.category-box p {
-  font-size: 20px; /* Increased font size */
-  line-height: 1.5;
-  margin-top: 10px;
-}
-
-/* Add responsive styling for smaller screens */
-@media (max-width: 992px) {
-  .category-boxes {
-      flex-wrap: wrap;
-      justify-content: center;
-  }
-  
-  .category-box {
-      margin-bottom: 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .category-box {
-      width: 180px;
-      height: 180px;
-  }
-}
-
-@media (max-width: 576px) {
-  .category-boxes {
-      flex-direction: column;
-      align-items: center;
-  }
-  
-  .category-box {
-      width: 220px;
-      height: 220px;
-      margin-bottom: 20px;
-  }
-}
-
-.structure-content {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 30px;
-}
-
-.structure-item {
-  text-align: center;
-  width: 40%;
-}
-
-.structure-icon {
-  width: 120px;
-  height: 120px;
-  margin: 0 auto 15px;
-}
-
-#syllabus {
-  background-color: #e7f0f8;
-  max-width: 100%;
-}
-
-#syllabus .section-title,
-#syllabus .topics-container {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* Updated CSS for the Topics Section */
-.topics-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 auto;
-  max-width: 900px;
-}
-
-.image-container {
-  width: 40%; /* Increased from 30% */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-right: 20px;
-}
-
-.topics-image {
-  max-width: 120%;
-  height: auto;
-  min-width: 350px; /* Added minimum width */
-}
-
-.topics-list {
-  list-style-type: disc;
-  padding-left: 80px;
-  width: 60%; /* Adjusted from 65% */
-}
-
-.topics-list li {
-  margin-bottom: 20px; /* Increased from 15px */
-  font-size: 18px; /* Increased from 16px */
-  font-weight: 500; /* Added slightly bolder font */
-  line-height: 1.2; /* Added for better readability */
-}
-
-/* Maintain the two-column layout for the topics list */
-.topics-list {
-  columns: 1;
-  column-gap: 50px;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .topics-container {
-      flex-direction: column;
-  }
-  
-  .image-container {
-      width: 100%;
-      margin-bottom: 30px;
-  }
-  
-  .topics-image {
-      max-width: 200px; /* Increased from 150px */
-  }
-  
-  .topics-list {
-      width: 100%;
-      columns: 1;
-  }
-}
-
-/* Added for larger screens to make everything bigger */
-@media (min-width: 992px) {
-  .topics-list li {
-      font-size: 20px; /* Even larger text on big screens */
-  }
-  
-  .image-container {
-      width: 45%; /* Slightly larger image area on big screens */
-  }
-}
-
-/* Updated CSS for the Awards Section */
-#awards {
-  background-color: #ffffff;
-  max-width: 100%;
-}
-
-.awards-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.awards-list {
-  list-style-type: disc;
-  padding-left: 70px;
-  width: 80%;
-}
-
-.awards-list li {
-  margin-bottom: 20px;
-  font-size: 40px; /* Increased text size */
-  line-height: 1.4;
-  font-weight: 510;
-}
-
-.trophy-container {
-  width: 35%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.trophy-image {
-  max-width: 50%;
-  height: auto;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .awards-container {
-      flex-direction: column;
-  }
-  
-  .awards-list {
-      width: 100%;
-      margin-bottom: 20px;
-  }
-  
-  .trophy-container {
-      width: 100%;
-  }
-  
-  .trophy-image {
-      max-width: 300px;
-  }
-}
-
-.awards-list li {
-  margin-bottom: 10px;
-  margin-left: 40px;
-  font-size: 16px;
-}
-
-#dates {
-  background-color: #dbedfc;
-  max-width: 100%;
-}
-
-#dates .section-title,
-#dates .dates-content {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* Updated CSS for Register Now buttons with hover effects */
-
-/* Common styles for both register buttons */
-.register-btn {
-  background-color: #4d0099;
-  color: white;
-  padding: 20px 60px;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 20px;
-  text-transform: uppercase;
-  text-decoration: none;
-  display: inline-block;
-  transition: all 0.3s ease; /* Smooth transition for hover effects */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* Hover effect for register buttons */
-.register-btn:hover {
-  background-color: #6600cc; /* Lighter purple on hover */
-  transform: translateY(-5px); /* Slight lift effect */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Enhanced shadow on hover */
-}
-
-/* Active (clicking) effect */
-.register-btn:active {
-  transform: translateY(-2px); /* Less lift when clicking */
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1); /* Reduced shadow when clicking */
-}
-
-/* Specific adjustments for the dates section button */
-#dates .register-btn {
-  margin-right: auto; /* This pushes it to the left */
-  margin-left: 200px; /* Adds some space from the left text */
-}
-
-/* Updated dates content layout */
-.dates-content {
-  display: flex;
-  justify-content: flex-start; 
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-.dates-text {
-  font-size: 18px;
-  font-weight: bold;
-  width: 40%;
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .dates-content {
-      flex-direction: column;
-      align-items: flex-start;
-  }
-  
-  .dates-text {
-      margin-bottom: 20px;
-      width: 100%;
-  }
-  
-  #dates .register-btn {
-      margin-left: 0;
-  }
-}
-/* .dates-content {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.dates-text {
-  margin-left: 40px;
-  font-size: 20px;
-  font-weight: bold;
-} */
-
-.footer {
-  background-color: #f5f5f5;
-  padding: 30px 20px;
-  text-align: center;
-}
-
-.contact-info {
-  display: flex;
-  justify-content: space-between;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.contact-left, .contact-right {
-  width: 45%;
-}
-
-.contact-item {
-  margin-bottom: 10px;
-}
-
-.footer-logo {
-  width: 150px;
-  margin-top: 20px;
-}
-
-.footer-nav {
-  margin-top: 20px;
-  display: flex;
-  justify-content: center;
-}
-
-.footer-nav a {
-  margin: 0 10px;
-  color: #333;
-  text-decoration: none;
-  font-size: 12px;
-}
-
-.kids-image {
-  display: block;
-  margin: 0 auto;
-  max-width: 150px;
-}
-
-/* Responsive styles for smaller screens */
-@media (max-width: 768px) {
-  .nav-links {
-      display: none;
-  }
-  
-  .hero-text {
-      max-width: 100%;
-  }
-  
-  .hero-image {
-      display: none;
-  }
-  
-  .about-content {
-      flex-direction: column;
-  }
-  
-  .about-text, .about-image {
-      max-width: 100%;
-      margin-bottom: 20px;
-  }
-  
-  .category-boxes {
-      flex-direction: column;
-  }
-  
-  .category-box {
-      width: 100%;
-      margin-bottom: 15px;
-  }
-  
-  .structure-content {
-      flex-direction: column;
-  }
-  
-  .structure-item {
-      width: 100%;
-      margin-bottom: 30px;
-  }
-  
-  .topics-list {
-      columns: 1;
-  }
-  
-  .contact-info {
-      flex-direction: column;
-  }
-  
-  .contact-left, .contact-right {
-      width: 100%;
-      margin-bottom: 20px;
-  }
-}
-
-/* Add these new styles to your existing CSS file */
-
-/* Restructured About section */
+/* About Section */
 .about-section {
   background-color: #dde7f5;
   padding: 50px 20px;
@@ -679,24 +172,86 @@ body {
   width: 60%;
 }
 
-.section-title.why-title {
-  margin-top: 40px;
-  text-align: center;
-  margin-left: 20px;
-
+.about-text {
+  margin-bottom: 30px;
+  line-height: 1.6;
 }
 
-/* Benefits Table Container */
-/* .benefits-table-container {
+.section-title.why-title {
+  margin-top: 40px;
+  text-align: left;
+}
+
+.benefits-list {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.benefits-list li {
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.side-image-container {
+  width: 35%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.side-image {
+  width: 100%;
+  max-width: 400px;
+}
+
+/* Impact Section */
+.nationwide-impact {
+  background-color: #f5f7fa;
+  padding: 70px 20px;
+  text-align: center;
+  max-width: 100%;
+}
+
+.impact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.impact-title {
+  font-size: 32px;
+  line-height: 1.4;
+  color: #0b5394;
+  margin-bottom: 40px;
+  font-weight: 700;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlight {
+  color: #ff6600;
+  font-weight: 900;
+}
+
+.impact-image {
+  max-width: 100px;
+  height: auto;
+}
+
+/* About Us Section with Benefits */
+.about-us-section {
   background-color: #e7f0f8;
   padding: 60px 20px;
-  margin-top: 50px;
-} */
+  max-width: 100%;
+}
+
+.benefits-table-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .benefits-table {
   display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
   margin-top: 20px;
 }
 
@@ -716,19 +271,7 @@ body {
 .gallery-img {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.main-img {
   width: 100%;
-  display: block;
-}
-
-.secondary-img {
-  position: absolute;
-  top: 50%;
-  right: -15%;
-  width: 55%;
-  transform: translateY(-30%);
 }
 
 .benefits-column {
@@ -736,12 +279,6 @@ body {
 }
 
 .benefit-row {
-  display: flex;
-  margin-bottom: 40px;
-  align-items: flex-start;
-}
-
-.benefit-row1 {
   display: flex;
   margin-bottom: 40px;
   align-items: flex-start;
@@ -755,10 +292,10 @@ body {
   min-width: 40px;
 }
 
-.benefit-content h3 {
+.benefit-content h4 {
   color: #0b5394;
-  font-size: 24px;
-  margin-bottom: 15px;
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
 .benefit-content p {
@@ -775,19 +312,26 @@ body {
 
 .advisors-container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
+  gap: 30px;
   max-width: 1200px;
-  margin: 0 auto 30px;
+  margin: 0 auto;
 }
 
 .advisor-card {
-  width: 30%;
+  width: 300px;
   background-color: #f5f7fa;
   border-radius: 10px;
   padding: 25px;
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.advisor-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .advisor-image-container {
@@ -829,133 +373,609 @@ body {
   line-height: 1.5;
 }
 
-.interesting-reads {
+/* Eligibility Section */
+#eligibility {
+  background-color: #dcefff;
+  max-width: 100%;
+  padding: 50px 20px;
+}
+
+.category-boxes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.category-box {
+  width: 220px;
+  height: 200px;
+  background-color: #0b5394;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.category-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.category-title {
+  background-color: #ffcc00;
+  padding: 8px 12px;
+  color: #0b5394;
+  font-weight: bold;
+  margin-bottom: 20px;
+  border-radius: 3px;
+  font-size: 20px;
+  width: 90%;
+}
+
+.category-box p {
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+/* Structure Section */
+.structure-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.structure-item {
+  text-align: center;
+  width: 300px;
+  transition: transform 0.3s;
+}
+
+.structure-item:hover {
+  transform: translateY(-10px);
+}
+
+.structure-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 15px;
+}
+
+.structure-item h3 {
+  font-size: 18px;
+  color: #0b5394;
+}
+
+/* Syllabus Section */
+#syllabus {
+  background-color: #e7f0f8;
+  max-width: 100%;
+  padding: 50px 20px;
+}
+
+.topics-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+.image-container {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.topics-image {
+  max-width: 100%;
+  height: auto;
+}
+
+.topics-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  width: 60%;
+}
+
+.topics-list li {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Awards Section */
+#awards {
+  background-color: #ffffff;
+  max-width: 100%;
+  padding: 50px 20px;
+}
+
+.awards-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   max-width: 1200px;
   margin: 0 auto;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
+}
+
+.awards-list {
+  list-style-type: disc;
+  padding-left: 20px;
+  width: 60%;
+}
+
+.awards-list li {
+  margin-bottom: 20px;
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.trophy-container {
+  width: 35%;
   display: flex;
-  align-items: center;
   justify-content: center;
-}
-
-.interesting-reads h3 {
-  color: #0b5394;
-  font-size: 20px;
-  display: flex;
   align-items: center;
 }
 
-.book-icon {
-  margin-right: 10px;
-  font-size: 24px;
+.trophy-image {
+  max-width: 80%;
+  height: auto;
 }
 
-/* Responsive styles for new sections */
+/* Dates Section */
+#dates {
+  background-color: #dbedfc;
+  max-width: 100%;
+  padding: 50px 20px;
+}
+
+.dates-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.dates-text {
+  font-size: 18px;
+  font-weight: bold;
+  width: 40%;
+}
+
+.dates-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 60%;
+  align-items: flex-end;
+}
+
+/* Footer */
+.footer {
+  background-color: #f5f5f5;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.contact-info {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+  flex-wrap: wrap;
+}
+
+.contact-left, .contact-right {
+  width: 45%;
+}
+
+.contact-item {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.contact-item i {
+  margin-right: 10px;
+  color: #0b5394;
+}
+
+.footer-logo {
+  width: 120px;
+  margin: 20px auto;
+  display: block;
+}
+
+.footer-nav {
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+}
+
+.footer-nav a {
+  margin: 5px 15px;
+  color: #333;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.footer-nav a:hover {
+  color: #0066cc;
+}
+
+.copyright {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
+}
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 40px;
+  }
+  
+  .hero p {
+    font-size: 30px;
+  }
+  
+  .impact-title {
+    font-size: 28px;
+  }
+}
+
 @media (max-width: 992px) {
-  .about-container {
-    flex-direction: column;
-  }
-  
-  .about-content {
-    width: 100%;
-    margin-bottom: 30px;
-  }
-  
-  .side-image-container {
-    width: 100%;
-    text-align: center;
-  }
-  
-  .side-image {
-    max-width: 70%;
-  }
-  
+  .about-container,
   .benefits-table {
     flex-direction: column;
   }
   
-  .image-column, 
+  .about-content,
+  .side-image-container,
+  .image-column,
   .benefits-column {
     width: 100%;
   }
   
+  .side-image-container,
   .image-column {
-    margin-bottom: 40px;
-    padding-right: 0;
+    margin-top: 30px;
+    order: 2;
   }
   
-  .secondary-img {
-    position: static;
-    transform: none;
-    width: 80%;
-    margin: 20px auto 0;
+  .about-content,
+  .benefits-column {
+    order: 1;
+  }
+  
+  .side-image,
+  .gallery-img {
+    max-width: 300px;
+    margin: 0 auto;
     display: block;
   }
   
-  .advisor-card {
-    width: 45%;
-    margin-bottom: P30px;
-  }
-}
-
-@media (max-width: 768px) {
   .section-title.why-title {
     text-align: center;
   }
   
+  .dates-text,
+  .dates-buttons {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .dates-text {
+    margin-bottom: 30px;
+  }
+  
+  .dates-buttons {
+    align-items: center;
+  }
+}
+
+/* Complete the cut-off media query from original CSS */
+@media (max-width: 768px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    transform: translateY(-200%);
+    transition: transform 0.3s ease;
+    z-index: 99;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .nav-links li {
+    margin: 10px 0;
+  }
+  
+  /* Hero section adjustments for mobile */
+  .hero {
+    padding: 50px 20px;
+    min-height: auto;
+  }
+  
+  .hero-content {
+    flex-direction: column;
+  }
+  
+  .hero-text {
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .hero h1 {
+    font-size: 32px;
+  }
+  
+  .hero p {
+    font-size: 24px;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .register-ind, .register-sch {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .hero-image {
+    position: relative;
+    width: 80%;
+    margin: 30px auto 0;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Add hamburger menu button styling */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  z-index: 100;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  margin: 5px 0;
+  background-color: #333;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .navbar {
+    padding: 0 20px;
+    justify-content: space-between;
+  }
+}
+
+/* Fix About Us section responsiveness */
+@media (max-width: 992px) {
+  .benefit-row {
+    margin-bottom: 30px;
+  }
+  
+  .benefit-content h4 {
+    font-size: 18px;
+  }
+  
+  .benefit-content p {
+    font-size: 14px;
+  }
+}
+
+/* Fix Advisory Committee section for mobile */
+@media (max-width: 768px) {
+  .advisors-container {
+    gap: 20px;
+  }
+  
   .advisor-card {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .advisor-image-container {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Fix Competition Structure section for mobile */
+@media (max-width: 768px) {
+  .structure-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+  }
+  
+  .structure-item {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Fix the category boxes in eligibility section */
+@media (max-width: 600px) {
+  .category-boxes {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .category-box {
+    width: 90%;
+    max-width: 280px;
+    margin-bottom: 20px;
+  }
+}
+
+/* Fix footer for mobile */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column;
+  }
+  
+  .contact-left, .contact-right {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .footer-nav {
+    flex-wrap: wrap;
+  }
+  
+  .footer-nav a {
+    margin: 5px 10px;
+  }
+}
+
+/* Fix dates section for mobile */
+@media (max-width: 768px) {
+  .dates-content {
+    flex-direction: column;
+  }
+  
+  .dates-text {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .dates-buttons {
+    width: 100%;
+    align-items: center;
+  }
+}
+
+/* Add smooth animation for hover effects */
+.register-ind:hover, .register-sch:hover, 
+.category-box:hover, 
+.structure-item:hover, 
+.advisor-card:hover {
+  transition: all 0.3s ease;
+}
+
+/* Add scroll animation class */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Fix topics section for better mobile display */
+@media (max-width: 768px) {
+  .topics-container {
+    flex-direction: column;
+  }
+  
+  .image-container {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .topics-image {
+    max-width: 250px;
+    min-width: auto;
+  }
+  
+  .topics-list {
+    width: 100%;
+    padding-left: 40px;
+  }
+  
+  .topics-list li {
+    font-size: 16px;
+    margin-bottom: 15px;
+  }
+}
+
+/* Fix awards section for mobile */
+@media (max-width: 768px) {
+  .awards-container {
+    flex-direction: column-reverse;
+  }
+  
+  .awards-list {
+    width: 100%;
+    padding-left: 40px;
+  }
+  
+  .awards-list li {
+    font-size: 16px;
+  }
+  
+  .trophy-container {
     width: 100%;
     margin-bottom: 30px;
   }
 }
 
-/* New Nationwide Impact Section */
-.nationwide-impact {
-  background-color: #f5f7fa;
-  padding: 70px 20px;
-  text-align: center;
-  max-width: 100%;
+/* Add proper button styling for dates section */
+#dates .register-ind,
+#dates .register-sch {
+  display: inline-block;
+  margin: 10px 0;
 }
 
-.impact-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.impact-title {
-  font-size: 36px;
-  line-height: 1.4;
-  color: #0b5394;
-  margin-bottom: 40px;
-  font-weight: 700;
-  max-width: 80%;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.highlight {
-  color: #ff6600;
-  font-weight: 900;
-}
-
-.impact-visual {
-  margin-top: 20px;
-}
-
-.impact-image {
-  max-width: 10%;
-  height: auto;
-}
-
-/* Responsive adjustments */
+/* Fix nationwide impact section for mobile */
 @media (max-width: 768px) {
   .impact-title {
-      font-size: 24px;
-      max-width: 100%;
+    font-size: 24px;
   }
   
   .impact-image {
-      max-width: 80%;
+    max-width: 80px;
   }
 }
