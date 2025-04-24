@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto Slab', serif;
 }
 
 body {
@@ -78,7 +78,7 @@ body {
 .hero h1 {
   font-size: 50px; /* Increased from 36px */
   font-weight: 900;
-  margin-bottom: 20px; /* Increased from 20px */
+  margin-bottom: 14px; /* Increased from 20px */
   line-height: 1.2; /* Added for better readability with larger text */
 }
 
@@ -88,15 +88,31 @@ body {
   color: #ffde59;
 }
 
-.register-btn {
+.register-ind {
   background-color: #4d0099;
   color: white;
-  padding: 20px 60px; /* Increased from 10px 25px */
+  padding: 15px 30px; /* Increased from 10px 25px */
+  margin-right: 20px;
   border: none;
   border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
-  font-size: 20px; /* Increased from 14px */
+  font-size: 16px; /* Increased from 14px */
+  text-transform: uppercase;
+  transition: background-color 0.3s;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.register-sch {
+  background-color: #4d0099;
+  color: white;
+  padding: 15px 30px; /* Increased from 10px 25px */
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px; /* Increased from 14px */
   text-transform: uppercase;
   transition: background-color 0.3s;
   display: inline-block;
@@ -106,10 +122,10 @@ body {
 .hero-image {
   position: absolute;
   right: 25px;
-  top: 40px;
+  top: 1px;
   width: 50%; /* Increased from 40% */
-  height: auto;
-  max-height: 450px; /* Added to control image height */
+  height: 600px;
+  /* max-height: 450px; Added to control image height */
 }
 
 .section {
@@ -167,6 +183,7 @@ body {
 
 .about-text {
   width: 100%;
+  margin-left: 40px;
 }
 
 .benefits-list {
@@ -197,8 +214,9 @@ body {
   }
 }
 
+
 #eligibility {
-  background-color: #cde6fb;
+  background-color: #dcefff;
   max-width: 100%;
   padding: 50px 20px;
 }
@@ -304,7 +322,7 @@ body {
 
 #syllabus .section-title,
 #syllabus .topics-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -315,7 +333,7 @@ body {
   justify-content: space-between;
   align-items: center;
   margin: 0 auto;
-  max-width: 1000px;
+  max-width: 900px;
 }
 
 .image-container {
@@ -327,9 +345,9 @@ body {
 }
 
 .topics-image {
-  max-width: 100%;
+  max-width: 120%;
   height: auto;
-  min-width: 220px; /* Added minimum width */
+  min-width: 350px; /* Added minimum width */
 }
 
 .topics-list {
@@ -641,278 +659,303 @@ body {
   }
 }
 
-/* Base styles remain the same - adding/updating responsive styles */
+/* Add these new styles to your existing CSS file */
 
-/* Mobile navigation menu styles */
-.mobile-menu-button {
-  display: none;
-  background: none;
-  border: none;
+/* Restructured About section */
+.about-section {
+  background-color: #dde7f5;
+  padding: 50px 20px;
+  max-width: 100%;
+}
+
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-content {
+  width: 60%;
+}
+
+.section-title.why-title {
+  margin-top: 40px;
+  text-align: center;
+  margin-left: 20px;
+
+}
+
+/* Benefits Table Container */
+/* .benefits-table-container {
+  background-color: #e7f0f8;
+  padding: 60px 20px;
+  margin-top: 50px;
+} */
+
+.benefits-table {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+
+.image-column {
+  width: 40%;
+  padding-right: 40px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.gallery-images {
+  position: relative;
+  width: 100%;
+}
+
+.gallery-img {
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.main-img {
+  width: 100%;
+  display: block;
+}
+
+.secondary-img {
+  position: absolute;
+  top: 50%;
+  right: -15%;
+  width: 55%;
+  transform: translateY(-30%);
+}
+
+.benefits-column {
+  width: 60%;
+}
+
+.benefit-row {
+  display: flex;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.benefit-row1 {
+  display: flex;
+  margin-bottom: 40px;
+  align-items: flex-start;
+}
+
+.benefit-number {
   font-size: 24px;
-  color: #333;
-  cursor: pointer;
+  font-weight: bold;
+  color: #0b5394;
+  margin-right: 20px;
+  min-width: 40px;
+}
+
+.benefit-content h3 {
+  color: #0b5394;
+  font-size: 24px;
+  margin-bottom: 15px;
+}
+
+.benefit-content p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Advisory Committee Section */
+#advisory {
+  background-color: #e7f0f8;
+  padding: 60px 20px;
+  max-width: 100%;
+}
+
+.advisors-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: 0 auto 30px;
+}
+
+.advisor-card {
+  width: 30%;
+  background-color: #f5f7fa;
+  border-radius: 10px;
+  padding: 25px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.advisor-image-container {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: 0 auto 20px;
+}
+
+.advisor-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.advisor-name {
+  color: #0b5394;
+  font-size: 22px;
+  margin-bottom: 5px;
+}
+
+.advisor-title {
+  color: #666;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.advisor-quote {
+  position: relative;
   padding: 10px;
+  font-style: italic;
+  color: #555;
+  text-align: left;
 }
 
-/* Updated navbar styles for responsiveness */
-@media (max-width: 992px) {
-  .mobile-menu-button {
-    display: block;
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    z-index: 101;
-  }
-  
-  .navbar {
-    padding: 0 20px;
-    justify-content: flex-start;
-  }
-  
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(255, 255, 255, 0.95);
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-  }
-  
-  .nav-links.active {
-    display: flex;
-  }
-  
-  .nav-links li {
-    margin: 15px 0;
-  }
-  
-  .nav-links a {
-    font-size: 18px;
-  }
+.advisor-quote p {
+  font-size: 14px;
+  line-height: 1.5;
 }
 
-/* Hero section responsive updates */
+.interesting-reads {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.interesting-reads h3 {
+  color: #0b5394;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+}
+
+.book-icon {
+  margin-right: 10px;
+  font-size: 24px;
+}
+
+/* Responsive styles for new sections */
 @media (max-width: 992px) {
-  .hero {
-    padding: 50px 20px;
-    text-align: center;
-    min-height: auto;
-  }
-  
-  .hero-content {
+  .about-container {
     flex-direction: column;
   }
   
-  .hero-text {
-    max-width: 100%;
-  }
-  
-  .hero h1 {
-    font-size: 36px;
-  }
-  
-  .hero p {
-    font-size: 24px;
-    margin-bottom: 30px;
-  }
-  
-  .register-btn {
-    padding: 12px 30px;
-    font-size: 16px;
-  }
-  
-  .hero-image {
-    position: relative;
-    width: 80%;
-    max-width: 300px;
-    margin: 30px auto 0;
-    top: auto;
-    right: auto;
-    display: block;
-  }
-}
-
-/* About/Why sections responsive updates */
-@media (max-width: 992px) {
-  .about-why-container {
-    flex-direction: column;
-    padding: 20px;
-  }
-  
-  .about-why-content {
+  .about-content {
     width: 100%;
-    order: 2;
+    margin-bottom: 30px;
   }
   
   .side-image-container {
     width: 100%;
-    position: static;
-    order: 1;
-    margin-bottom: 20px;
+    text-align: center;
   }
   
   .side-image {
-    max-width: 250px;
-  }
-}
-
-/* Structure section responsive updates */
-@media (max-width: 768px) {
-  .structure-content {
-    flex-direction: column;
-    align-items: center;
+    max-width: 70%;
   }
   
-  .structure-item {
-    width: 90%;
-    margin-bottom: 30px;
-  }
-  
-  .structure-icon {
-    width: 80px;
-    height: 80px;
-  }
-}
-
-/* Eligibility section improved responsiveness */
-@media (max-width: 992px) {
-  .category-boxes {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  
-  .category-box {
-    width: calc(50% - 20px);
-    max-width: 200px;
-    margin: 10px;
-  }
-}
-
-@media (max-width: 576px) {
-  .category-box {
-    width: 80%;
-    max-width: 220px;
-    margin-bottom: 15px;
-  }
-  
-  .category-title {
-    font-size: 18px;
-  }
-  
-  .category-box p {
-    font-size: 16px;
-  }
-}
-
-/* Topics section responsive updates */
-@media (max-width: 768px) {
-  .topics-container {
+  .benefits-table {
     flex-direction: column;
   }
   
-  .image-container {
+  .image-column, 
+  .benefits-column {
     width: 100%;
-    max-width: 200px;
-    margin: 0 auto 20px;
+  }
+  
+  .image-column {
+    margin-bottom: 40px;
     padding-right: 0;
   }
   
-  .topics-list {
-    width: 100%;
-    padding-left: 30px;
+  .secondary-img {
+    position: static;
+    transform: none;
+    width: 80%;
+    margin: 20px auto 0;
+    display: block;
   }
   
-  .topics-list li {
-    font-size: 16px;
-    margin-bottom: 12px;
+  .advisor-card {
+    width: 45%;
+    margin-bottom: P30px;
   }
 }
 
-/* Awards section responsive updates */
 @media (max-width: 768px) {
-  .awards-container {
-    flex-direction: column;
-  }
-  
-  .awards-list {
-    width: 100%;
-    padding-left: 30px;
-    order: 2;
-  }
-  
-  .awards-list li {
-    font-size: 16px;
-    margin-left: 20px;
-    margin-bottom: 12px;
-  }
-  
-  .trophy-container {
-    width: 100%;
-    order: 1;
-    margin-bottom: 20px;
-  }
-  
-  .trophy-image {
-    max-width: 150px;
-  }
-}
-
-/* Dates section responsive updates */
-@media (max-width: 768px) {
-  .dates-content {
-    flex-direction: column;
-    align-items: center;
+  .section-title.why-title {
     text-align: center;
   }
   
-  .dates-text {
+  .advisor-card {
     width: 100%;
-    margin-bottom: 20px;
-    margin-left: 0;
-  }
-  
-  #dates .register-btn {
-    margin-left: 0;
+    margin-bottom: 30px;
   }
 }
 
-@media (max-width: 576px) {
-  .dates-text {
-    font-size: 16px;
-  }
-  
-  .register-btn {
-    padding: 12px 25px;
-    font-size: 16px;
-  }
+/* New Nationwide Impact Section */
+.nationwide-impact {
+  background-color: #f5f7fa;
+  padding: 70px 20px;
+  text-align: center;
+  max-width: 100%;
 }
 
-/* Footer responsive updates */
+.impact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.impact-title {
+  font-size: 36px;
+  line-height: 1.4;
+  color: #0b5394;
+  margin-bottom: 40px;
+  font-weight: 700;
+  max-width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.highlight {
+  color: #ff6600;
+  font-weight: 900;
+}
+
+.impact-visual {
+  margin-top: 20px;
+}
+
+.impact-image {
+  max-width: 10%;
+  height: auto;
+}
+
+/* Responsive adjustments */
 @media (max-width: 768px) {
-  .contact-info {
-    flex-direction: column;
+  .impact-title {
+      font-size: 24px;
+      max-width: 100%;
   }
   
-  .contact-left, .contact-right {
-    width: 100%;
-    text-align: center;
-    margin-bottom: 15px;
-  }
-  
-  .footer-nav {
-    flex-wrap: wrap;
-  }
-  
-  .footer-nav a {
-    margin: 5px;
-  }
-  
-  .footer-logo {
-    width: 100px;
+  .impact-image {
+      max-width: 80%;
   }
 }
